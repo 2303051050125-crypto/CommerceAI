@@ -1,0 +1,38 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+backend/venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node dependencies
+node_modules/
+
+# Backup files
+*.bak
+*_backup.py
+
+# Local dependency snapshot
+backend/requirements-lock.txt
+backend/database/purchases.json

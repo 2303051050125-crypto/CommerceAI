@@ -1,0 +1,215 @@
+[
+    {
+        "id": 1,
+        "name": "ASUS Vivobook 15",
+        "category": "laptop",
+        "brand": "ASUS",
+        "price": 62990,
+        "rating": 4.4,
+        "reviews": 1204,
+        "stock": true,
+
+        "description": "A versatile laptop suitable for students, programming, office work and everyday productivity.",
+
+        "features": [
+            "Intel Core i5",
+            "16GB RAM",
+            "512GB SSD",
+            "Full HD Display"
+        ],
+
+        "tags": [
+            "programming",
+            "student",
+            "office",
+            "productivity",
+            "coding",
+            "college"
+        ]
+    },
+
+    {
+        "id": 2,
+        "name": "Lenovo IdeaPad Slim 5",
+        "category": "laptop",
+        "brand": "Lenovo",
+        "price": 65990,
+        "rating": 4.5,
+        "reviews": 1830,
+        "stock": true,
+
+        "description": "A performance-focused laptop suitable for programming, students, multitasking and everyday professional work.",
+
+        "features": [
+            "AMD Ryzen 7",
+            "16GB RAM",
+            "512GB SSD",
+            "Full HD Display"
+        ],
+
+        "tags": [
+            "programming",
+            "coding",
+            "student",
+            "college",
+            "multitasking",
+            "performance",
+            "office",
+            "productivity"
+        ]
+    },
+
+    {
+        "id": 3,
+        "name": "HP Pavilion 15",
+        "category": "laptop",
+        "brand": "HP",
+        "price": 67990,
+        "rating": 4.3,
+        "reviews": 1560,
+        "stock": true,
+
+        "description": "A balanced laptop designed for programming, students, office work, productivity and general computing.",
+
+        "features": [
+            "Intel Core i5",
+            "16GB RAM",
+            "512GB SSD",
+            "Full HD Display"
+        ],
+
+        "tags": [
+            "programming",
+            "coding",
+            "student",
+            "college",
+            "office",
+            "productivity",
+            "work"
+        ]
+    },
+
+    {
+        "id": 4,
+        "name": "Acer Aspire 7",
+        "category": "laptop",
+        "brand": "Acer",
+        "price": 58990,
+        "rating": 4.2,
+        "reviews": 2100,
+        "stock": true,
+
+        "description": "A gaming-oriented performance laptop suitable for gaming, programming, students and demanding applications.",
+
+        "features": [
+            "AMD Ryzen 5",
+            "16GB RAM",
+            "512GB SSD",
+            "Gaming Graphics"
+        ],
+
+        "tags": [
+            "gaming",
+            "programming",
+            "coding",
+            "student",
+            "college",
+            "performance",
+            "graphics",
+            "gaming laptop"
+        ]
+    },
+
+    {
+        "id": 5,
+        "name": "Dell Inspiron 15",
+        "category": "laptop",
+        "brand": "Dell",
+        "price": 69990,
+        "rating": 4.4,
+        "reviews": 1980,
+        "stock": true,
+
+        "description": "A reliable everyday laptop suitable for programming, office work, students, productivity and general computing.",
+
+        "features": [
+            "Intel Core i5",
+            "16GB RAM",
+            "512GB SSD",
+            "Full HD Display"
+        ],
+
+        "tags": [
+            "programming",
+            "coding",
+            "student",
+            "college",
+            "office",
+            "productivity",
+            "work",
+            "business"
+        ]
+    },
+
+    {
+        "id": 6,
+        "name": "Sony WH-1000XM6",
+        "category": "headphones",
+        "brand": "Sony",
+        "price": 34999,
+        "rating": 4.6,
+        "reviews": 2841,
+        "stock": true,
+
+        "description": "Premium wireless headphones designed for music, travel, studying and focused work with active noise cancellation.",
+
+        "features": [
+            "Active Noise Cancellation",
+            "30 Hour Battery",
+            "Wireless",
+            "Premium Audio"
+        ],
+
+        "tags": [
+            "music",
+            "travel",
+            "study",
+            "student",
+            "office",
+            "wireless",
+            "noise cancellation",
+            "audio"
+        ]
+    },
+
+    {
+        "id": 7,
+        "name": "Samsung Galaxy S25",
+        "category": "smartphone",
+        "brand": "Samsung",
+        "price": 69999,
+        "rating": 4.5,
+        "reviews": 4512,
+        "stock": true,
+
+        "description": "A premium smartphone suitable for photography, gaming, entertainment, communication and everyday productivity.",
+
+        "features": [
+            "5G",
+            "256GB Storage",
+            "AMOLED Display",
+            "Advanced Camera"
+        ],
+
+        "tags": [
+            "photography",
+            "camera",
+            "gaming",
+            "entertainment",
+            "5g",
+            "premium",
+            "productivity",
+            "smartphone"
+        ]
+    }
+]

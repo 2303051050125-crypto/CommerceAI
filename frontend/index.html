@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#171717">
+
+    <title>CommerceAI — Personal Commerce Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <div>
+                <h2>CommerceAI</h2>
+                <span>Smart Shopping Platform</span>
+            </div>
+
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-title">DISCOVER</p>
+
+            <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#products" class="nav-link" data-page="products">
+                <i class="fa-solid fa-store"></i>
+                <span>Explore Products</span>
+            </a>
+
+            <a href="#wishlist" class="nav-link" data-page="wishlist">
+                <i class="fa-solid fa-heart"></i>
+                <span>My Wishlist</span>
+            </a>
+
+            <a href="#alerts" class="nav-link" data-page="alerts">
+                <i class="fa-solid fa-bell"></i>
+                <span>Price Alerts</span>
+            </a>
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="#budget" class="nav-link" data-page="budget">
+                <i class="fa-solid fa-wallet"></i>
+                <span>My Budget</span>
+            </a>
+
+            <a href="#purchases" class="nav-link" data-page="purchases">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Purchase History</span>
+            </a>
+
+            <a href="#analytics" class="nav-link" data-page="analytics">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="#profile" class="nav-link" data-page="profile">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#settings" class="nav-link" data-page="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- AI ASSISTANT CARD -->
+
+        <div class="sidebar-bottom">
+
+            <div class="upgrade-card">
+
+                <div class="sidebar-ai-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <h3>Your AI Shopping Assistant</h3>
+
+                <p>
+                    Find products, compare options and make smarter
+                    purchasing decisions.
+                </p>
+
+                <button onclick="openAssistant()">
+                    <i class="fa-solid fa-sparkles"></i>
+                    Ask AI Assistant
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="mobile-menu" aria-label="Open navigation">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products, brands or categories..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">AS</div>
+
+                    <div class="profile-info">
+                        <strong>Arnish</strong>
+                        <span>Personal Account</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =================================================
+             MARKETPLACE CATEGORY NAVIGATION
+        ================================================== -->
+
+        <nav class="marketplace-nav" aria-label="Product categories">
+
+            <div class="marketplace-nav-inner">
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span>All Products</span>
+                </a>
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-laptop"></i>
+                    <span>Laptops</span>
+                </a>
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Smartphones</span>
+                </a>
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Audio</span>
+                </a>
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Electronics</span>
+                </a>
+
+                <a href="#products" class="marketplace-category">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Gaming</span>
+                </a>
+
+                <a href="#wishlist" class="marketplace-category">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Saved Items</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!-- =================================================
+             PAGE 1: DASHBOARD
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-dashboard"
+            data-page-section="dashboard"
+        >
+
+            <!-- WELCOME -->
+
+            <div class="welcome">
+
+                <div>
+                    <p class="small-text">
+                        YOUR PERSONAL MARKETPLACE
+                    </p>
+
+                    <h1>Welcome back, Arnish 👋</h1>
+
+                    <p>
+                        Discover smarter shopping with your personal AI assistant.
+                    </p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="openAssistant()"
+                >
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Ask AI
+                </button>
+
+            </div>
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+
+                        <span class="positive">Monthly</span>
+
+                    </div>
+
+                    <p>Monthly Budget</p>
+
+                    <h2 id="monthlyBudget">₹15,000</h2>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            id="budgetProgress"
+                            style="width:0%"
+                        ></div>
+                    </div>
+
+                    <small id="budgetSummary">
+                        ₹0 spent · ₹15,000 remaining
+                    </small>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+
+                        <span class="positive">Activity</span>
+
+                    </div>
+
+                    <p>Total Purchases</p>
+
+                    <h2 id="totalPurchases">8</h2>
+
+                    <small id="monthlyPurchases">
+                        0 purchases this month
+                    </small>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+
+                        <span class="positive">AI Savings</span>
+
+                    </div>
+
+                    <p>Money Saved</p>
+
+                    <h2>₹4,820</h2>
+
+                    <small>
+                        Through AI recommendations
+                    </small>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+
+                        <span class="warning">3 active</span>
+
+                    </div>
+
+                    <p>Price Alerts</p>
+
+                    <h2>3</h2>
+
+                    <small>1 deal found today</small>
+
+                </div>
+
+            </div>
+
+            <!-- AI SHOPPING ASSISTANT -->
+
+            <div class="ai-section">
+
+                <div class="ai-header">
+
+                    <div class="ai-title">
+
+                        <div class="ai-icon">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div>
+                            <h2>AI Shopping Assistant</h2>
+                            <span>Your intelligent commerce agent</span>
+                        </div>
+
+                    </div>
+
+                    <span class="online">
+                        <span></span>
+                        AI Online
+                    </span>
+
+                </div>
+
+                <div class="chat-area" id="chatArea">
+
+                    <div class="message ai-message">
+
+                        <div class="message-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div class="message-content">
+
+                            <p>
+                                Hi Arnish! 👋 I'm your personal
+                                commerce assistant. What are you
+                                looking for today?
+                            </p>
+
+                            <div class="suggestions">
+
+                                <button
+                                    onclick="sendSuggestion('Find me a laptop under ₹70,000')"
+                                >
+                                    💻 Find a laptop
+                                </button>
+
+                                <button
+                                    onclick="sendSuggestion('Find good headphones under ₹5,000')"
+                                >
+                                    🎧 Find headphones
+                                </button>
+
+                                <button
+                                    onclick="sendSuggestion('Show me the best deals')"
+                                >
+                                    🔥 Best deals
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="chat-input">
+
+                    <input
+                        type="text"
+                        id="chatInput"
+                        placeholder="Tell me what you want to buy..."
+                        onkeypress="handleEnter(event)"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="sendMessage()"
+                        aria-label="Send message"
+                    >
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD PANELS -->
+
+            <div class="dashboard-grid">
+
+                <!-- AI RECOMMENDATIONS -->
+
+                <!-- AI RECOMMENDATIONS -->
+
+<div class="panel">
+
+    <div class="panel-header">
+
+        <div>
+            <h2>AI Recommendations</h2>
+            <p>Based on your preferences</p>
+        </div>
+
+        <button
+            class="view-all"
+            type="button"
+            onclick="navigateToPage('products')"
+        >
+            View all
+        </button>
+
+    </div>
+
+    <div class="product-list">
+
+        <!-- SONY HEADPHONES -->
+
+        <div class="product">
+
+            <div class="product-image dashboard-product-image">
+                <img
+                    src="assets/products/sony-wh1000xm6.jpg"
+                    alt="Sony WH-1000XM6"
+                    onerror="this.style.display='none'"
+                >
+            </div>
+
+            <div class="product-info">
+
+                <span class="category">HEADPHONES</span>
+
+                <h3>Sony WH-1000XM6</h3>
+
+                <div class="rating">
+                    ⭐ 4.6
+                    <span>(2,841 reviews)</span>
+                </div>
+
+            </div>
+
+            <div class="product-price">
+                <strong>₹34,999</strong>
+                <span class="discount">12% OFF</span>
+            </div>
+
+        </div>
+
+        <!-- ASUS LAPTOP -->
+
+        <div class="product">
+
+            <div class="product-image dashboard-product-image">
+                <img
+                    src="assets/products/asus-vivobook-15.png"
+                    alt="ASUS Vivobook 15"
+                    onerror="this.style.display='none'"
+                >
+            </div>
+
+            <div class="product-info">
+
+                <span class="category">LAPTOP</span>
+
+                <h3>ASUS Vivobook 15</h3>
+
+                <div class="rating">
+                    ⭐ 4.4
+                    <span>(1,204 reviews)</span>
+                </div>
+
+            </div>
+
+            <div class="product-price">
+                <strong>₹62,990</strong>
+                <span class="discount">8% OFF</span>
+            </div>
+
+        </div>
+
+        <!-- SAMSUNG SMARTPHONE -->
+
+        <div class="product">
+
+            <div class="product-image dashboard-product-image">
+                <img
+                    src="assets/products/samsung-galaxy-s25.jpg"
+                    alt="Samsung Galaxy S25"
+                    onerror="this.style.display='none'"
+                >
+            </div>
+
+            <div class="product-info">
+
+                <span class="category">SMARTPHONE</span>
+
+                <h3>Samsung Galaxy S25</h3>
+
+                <div class="rating">
+                    ⭐ 4.5
+                    <span>(4,512 reviews)</span>
+                </div>
+
+            </div>
+
+            <div class="product-price">
+                <strong>₹69,999</strong>
+                <span class="discount">15% OFF</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+                <!-- PRICE ALERTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Price Alerts</h2>
+                            <p>Products you're watching</p>
+                        </div>
+
+                        <button class="add-alert" type="button">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="alerts">
+
+                        <div class="alert">
+
+                            <div class="alert-product">💾</div>
+
+                            <div class="alert-info">
+                                <h3>Samsung 990 EVO SSD</h3>
+                                <p>Target: ₹4,500</p>
+                                <div class="price">₹4,699</div>
+                            </div>
+
+                            <span class="watching">Watching</span>
+
+                        </div>
+
+                        <div class="alert deal">
+
+                            <div class="alert-product">🎮</div>
+
+                            <div class="alert-info">
+                                <h3>PlayStation 5</h3>
+                                <p>Target: ₹45,000</p>
+                                <div class="price">₹44,499</div>
+                            </div>
+
+                            <span class="deal-found">DEAL!</span>
+
+                        </div>
+
+                        <div class="alert">
+
+                            <div class="alert-product">⌚</div>
+
+                            <div class="alert-info">
+                                <h3>Samsung Galaxy Watch</h3>
+                                <p>Target: ₹18,000</p>
+                                <div class="price">₹19,999</div>
+                            </div>
+
+                            <span class="watching">Watching</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RECENT PURCHASES -->
+
+            <div class="panel purchases-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Recent Purchases</h2>
+                        <p>Your latest commerce activity</p>
+                    </div>
+
+                    <button class="view-all" type="button">
+                        View history
+                    </button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>PRODUCT</th>
+                                <th>CATEGORY</th>
+                                <th>DATE</th>
+                                <th>PRICE</th>
+                                <th>AI SAVING</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="purchaseHistoryBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 2: FIND PRODUCTS
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-products"
+            data-page-section="products"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">SHOPPING DESTINATION</p>
+                    <h1>Explore Products</h1>
+                    <p>Discover products using your AI shopping assistant.</p>
+                </div>
+            </div>
+
+            <div id="productsPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 3: WISHLIST
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-wishlist"
+            data-page-section="wishlist"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">YOUR SAVED COLLECTION</p>
+                    <h1>My Wishlist</h1>
+                    <p>Keep track of products you want to buy.</p>
+                </div>
+            </div>
+
+            <div id="wishlistPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 4: PRICE ALERTS
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-alerts"
+            data-page-section="alerts"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">PRICE TRACKING</p>
+                    <h1>Price Alerts</h1>
+                    <p>Monitor products and their target prices.</p>
+                </div>
+            </div>
+
+            <div id="alertsPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 5: BUDGET
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-budget"
+            data-page-section="budget"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">SPENDING CONTROL</p>
+                    <h1>My Budget</h1>
+                    <p>Track your spending and manage your monthly budget.</p>
+                </div>
+            </div>
+
+            <div id="budgetPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 6: PURCHASES
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-purchases"
+            data-page-section="purchases"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">ORDER ACTIVITY</p>
+                    <h1>Purchase History</h1>
+                    <p>View and manage your purchase activity.</p>
+                </div>
+            </div>
+
+            <div id="purchasesPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 7: ANALYTICS
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-analytics"
+            data-page-section="analytics"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">YOUR SHOPPING INSIGHTS</p>
+                    <h1>Analytics</h1>
+                    <p>Understand your purchasing patterns and spending.</p>
+                </div>
+            </div>
+
+            <div id="analyticsPageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 8: PROFILE
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-profile"
+            data-page-section="profile"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">PERSONAL ACCOUNT</p>
+                    <h1>My Profile</h1>
+                    <p>View and manage your personal account information.</p>
+                </div>
+            </div>
+
+            <div id="profilePageContent"></div>
+
+        </section>
+
+        <!-- =================================================
+             PAGE 9: SETTINGS
+        ================================================== -->
+
+        <section
+            class="content page-section"
+            id="page-settings"
+            data-page-section="settings"
+            hidden
+        >
+
+            <div class="welcome">
+                <div>
+                    <p class="small-text">PREFERENCES</p>
+                    <h1>Settings</h1>
+                    <p>Manage your CommerceAI application preferences.</p>
+                </div>
+            </div>
+
+            <div id="settingsPageContent"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- =====================================================
+     AI ASSISTANT MODAL
+===================================================== -->
+
+<div class="modal" id="assistantModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div class="ai-title">
+
+                <div class="ai-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div>
+                    <h2>AI Commerce Assistant</h2>
+                    <span>Ready to help</span>
+                </div>
+
+            </div>
+
+            <button
+                class="close-modal"
+                onclick="closeAssistant()"
+                aria-label="Close assistant"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p>
+                Tell me what you want to purchase and I'll help you
+                find the best option.
+            </p>
+
+            <div class="quick-actions">
+                <button type="button">Find products</button>
+                <button type="button">Compare prices</button>
+                <button type="button">Find deals</button>
+                <button type="button">Check my budget</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FRONTEND JAVASCRIPT -->
+
+<script src="app.js"></script>
+<script src="marketplace.js"></script>
+
+</body>
+</html>
